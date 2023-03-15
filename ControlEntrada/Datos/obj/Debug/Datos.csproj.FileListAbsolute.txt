@@ -1,0 +1,6 @@
+C:\ControlEntradaSENA\ControlEntrada\Datos\bin\Debug\Datos.dll
+C:\ControlEntradaSENA\ControlEntrada\Datos\bin\Debug\Datos.pdb
+C:\ControlEntradaSENA\ControlEntrada\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\ControlEntradaSENA\ControlEntrada\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\ControlEntradaSENA\ControlEntrada\Datos\obj\Debug\Datos.dll
+C:\ControlEntradaSENA\ControlEntrada\Datos\obj\Debug\Datos.pdb
