@@ -32,8 +32,8 @@ namespace ControlEntrada
             string contrasena = txtContrasena.Text;
 
             try {
-                SqlCommand command = new SqlCommand("SELECT * FROM usuarios WHERE Usuario = @pepito AND Contrasena = @Contrasena", ConexionBD.conectar());
-                command.Parameters.AddWithValue("@pepito", usuario);
+                SqlCommand command = new SqlCommand("SELECT * FROM Usuarios WHERE Usuario=@Usuario AND Contrasena = @Contrasena", ConexionBD.conectar());
+                command.Parameters.AddWithValue("@Usuario", usuario);
                 command.Parameters.AddWithValue("@Contrasena", contrasena);
                 SqlDataReader reader = command.ExecuteReader();
 

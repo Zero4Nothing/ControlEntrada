@@ -37,10 +37,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPhoto = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtIdUsuario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtRol = new System.Windows.Forms.ComboBox();
+            this.pctbFoto = new System.Windows.Forms.PictureBox();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -73,13 +71,18 @@
             this.BTodosLosRegistros = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.usuariosbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosbindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -130,7 +133,7 @@
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnPhoto);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pctbFoto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(406, 56);
             this.groupBox1.Name = "groupBox1";
@@ -179,44 +182,27 @@
             this.btnPhoto.UseVisualStyleBackColor = true;
             this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
             // 
-            // pictureBox1
+            // pctbFoto
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 192);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pctbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pctbFoto.Location = new System.Drawing.Point(33, 44);
+            this.pctbFoto.Name = "pctbFoto";
+            this.pctbFoto.Size = new System.Drawing.Size(153, 192);
+            this.pctbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctbFoto.TabIndex = 2;
+            this.pctbFoto.TabStop = false;
             // 
-            // txtIdUsuario
+            // cmbRol
             // 
-            this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(170, 54);
-            this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(191, 26);
-            this.txtIdUsuario.TabIndex = 44;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(46, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 20);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "IdUsuario:";
-            // 
-            // txtRol
-            // 
-            this.txtRol.FormattingEnabled = true;
-            this.txtRol.Items.AddRange(new object[] {
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Items.AddRange(new object[] {
             "Admin",
             "Invitado"});
-            this.txtRol.Location = new System.Drawing.Point(170, 296);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(191, 28);
-            this.txtRol.TabIndex = 42;
+            this.cmbRol.Location = new System.Drawing.Point(170, 296);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(191, 28);
+            this.cmbRol.TabIndex = 42;
+            this.cmbRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbRol_KeyPress);
             // 
             // txtContrasena
             // 
@@ -242,6 +228,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(170, 134);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(191, 26);
@@ -250,6 +237,7 @@
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(170, 94);
+            this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(191, 26);
             this.txtCedula.TabIndex = 37;
@@ -316,12 +304,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtIdUsuario);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtRol);
+            this.groupBox2.Controls.Add(this.cmbRol);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtContrasena);
             this.groupBox2.Controls.Add(this.label6);
@@ -333,9 +319,9 @@
             this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(88, 116);
+            this.groupBox2.Location = new System.Drawing.Point(88, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(754, 374);
+            this.groupBox2.Size = new System.Drawing.Size(754, 375);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Usuario";
@@ -417,7 +403,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(23, 22);
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.BNuevo_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // BGuardar
             // 
@@ -428,7 +414,7 @@
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(23, 22);
             this.BGuardar.Text = "Guardar";
-            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click_1);
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // BtnCancelar
             // 
@@ -450,6 +436,7 @@
             this.BEliminar.Name = "BEliminar";
             this.BEliminar.Size = new System.Drawing.Size(23, 22);
             this.BEliminar.Text = "Eliminar";
+            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // BEditar
             // 
@@ -460,6 +447,7 @@
             this.BEditar.Name = "BEditar";
             this.BEditar.Size = new System.Drawing.Size(23, 22);
             this.BEditar.Text = "Editar";
+            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -528,11 +516,43 @@
             this.bindingNavigator.TabIndex = 7;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.txtIdUsuario);
+            this.panel2.Location = new System.Drawing.Point(599, 81);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(16, 15);
+            this.panel2.TabIndex = 46;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(67, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 20);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "IdUsuario:";
+            // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Enabled = false;
+            this.txtIdUsuario.Location = new System.Drawing.Point(6, 77);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(191, 20);
+            this.txtIdUsuario.TabIndex = 46;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 535);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.panel1);
@@ -547,13 +567,15 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
             this.bindingNavigator.ResumeLayout(false);
             this.bindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosbindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,8 +590,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPhoto;
-        public System.Windows.Forms.TextBox txtIdUsuario;
-        private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtContrasena;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.TextBox txtCorreo;
@@ -582,8 +602,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.ComboBox txtRol;
+        public System.Windows.Forms.PictureBox pctbFoto;
+        public System.Windows.Forms.ComboBox cmbRol;
         public System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         public System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -604,5 +624,9 @@
         public System.Windows.Forms.ToolStripButton BTodosLosRegistros;
         public System.Windows.Forms.BindingNavigator bindingNavigator;
         public System.Windows.Forms.BindingSource usuariosbindingSource;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtIdUsuario;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

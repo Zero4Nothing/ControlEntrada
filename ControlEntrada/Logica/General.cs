@@ -3,6 +3,9 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,7 +64,7 @@ namespace Logica
 
         }
 
-        public static void InsertarActualizar(string texto, byte[] foto, string cedula, string nombre, string usuario, string correo, string contraseña, string rol, int tipoCrud)
+        public static void InsertarActualizarUsuarios(string texto, byte Foto, string Cedula, string Nombre, string Usuario, string Correo, string Contrasena, string Rol, int TipoCrud)
         {
             try
             {
@@ -73,25 +76,34 @@ namespace Logica
                 Mytransaction = conexion.BeginTransaction();
                 consulta.Transaction = Mytransaction;
                 consulta.CommandText = texto;
-                int TipoCrud = 0;
+
                 //1 = insertar, 2 = Actualizar
                 //3 = eliminar
                 if (TipoCrud == 1 || TipoCrud == 2)
                 {
-                    consulta.Parameters.AddWithValue("@Foto", foto);
-                    consulta.Parameters.AddWithValue("@Cedula", cedula);
-                    consulta.Parameters.AddWithValue("@Nombre", nombre);
-                    consulta.Parameters.AddWithValue("@Correo", correo);
-                    consulta.Parameters.AddWithValue("@Usuario", usuario);
-                    consulta.Parameters.AddWithValue("@Contraseña", contraseña);
-                    consulta.Parameters.AddWithValue("@Rol", rol);
+                    byte[] fotoBytes;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        Foto.Save(ms, ImageFormat.Jpeg);
+                        fotoBytes = ms.ToArray();
+                    }
+                    SqlParameter paramFoto = new SqlParameter("@Foto", SqlDbType.VarBinary, fotoBytes.Length);
+                    paramFoto.Value = fotoBytes;
+                    consulta.Parameters.Add(paramFoto);
+                    consulta.Parameters.AddWithValue("@Cedula", Cedula);
+                    consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                    consulta.Parameters.AddWithValue("@Correo", Correo);
+                    consulta.Parameters.AddWithValue("@Usuario", Usuario);
+                    consulta.Parameters.AddWithValue("@Contrasena", Contrasena);
+                    consulta.Parameters.AddWithValue("@Rol", Rol);
                 }
+                consulta.ExecuteNonQuery();
+                Mytransaction.Commit();
             }
-
             catch (Exception e)
             {
                 Mytransaction?.Rollback();
-                MessageBox.Show("No se puede realizar la operacion" + e.Message);
+                MessageBox.Show("No se puede realizar la operacion ;( " + e.Message);
             }
             finally
             {
@@ -99,6 +111,11 @@ namespace Logica
                 conexion.Close();
             }
         }
+
+
+
+
+
 
         public static void VerificarExistenRegistros(string texto)
         {

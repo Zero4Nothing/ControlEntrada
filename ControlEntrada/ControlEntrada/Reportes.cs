@@ -16,5 +16,10 @@ namespace ControlEntrada
         {
             InitializeComponent();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -30,13 +30,13 @@ namespace ControlEntrada
 
         private void registroButton_Click(object sender, EventArgs e)
         {
-            RegistroPersonas RegistroPersonas = new RegistroPersonas();
+            Personas RegistroPersonas = new Personas();
             RegistroPersonas.ShowDialog();
         }
 
         private void registroEntSalButton_Click(object sender, EventArgs e)
         {
-            RegistroControl RegistroEntradaSalida = new RegistroControl();
+            EntradaSalida RegistroEntradaSalida = new EntradaSalida();
             RegistroEntradaSalida.ShowDialog();
         }
 

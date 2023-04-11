@@ -26,10 +26,11 @@ namespace ControlEntrada.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(Local)\\SQLEXPRESS;Initial Catalog=EntradaSalida;User ID=user1")]
-        public string EntradaSalidaConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(Local)\\SQLEXPRESS;Initial Catalog=EntradaSalida;Persist Security Inf" +
+            "o=True;User ID=EntradaSalida;Password=1234")]
+        public string EntradaSalidaConnectionString1 {
             get {
-                return ((string)(this["EntradaSalidaConnectionString"]));
+                return ((string)(this["EntradaSalidaConnectionString1"]));
             }
         }
     }

@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.acercaDeButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.registroEntSalButton = new System.Windows.Forms.Button();
             this.registroButton = new System.Windows.Forms.Button();
@@ -106,25 +105,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // acercaDeButton
-            // 
-            this.acercaDeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.acercaDeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.acercaDeButton.FlatAppearance.BorderSize = 0;
-            this.acercaDeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.acercaDeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.acercaDeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.acercaDeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acercaDeButton.Image = ((System.Drawing.Image)(resources.GetObject("acercaDeButton.Image")));
-            this.acercaDeButton.Location = new System.Drawing.Point(629, 80);
-            this.acercaDeButton.Name = "acercaDeButton";
-            this.acercaDeButton.Size = new System.Drawing.Size(151, 178);
-            this.acercaDeButton.TabIndex = 13;
-            this.acercaDeButton.Text = "Acerca de";
-            this.acercaDeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.acercaDeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.acercaDeButton.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -135,7 +115,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(465, 80);
+            this.button3.Location = new System.Drawing.Point(541, 84);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 178);
             this.button3.TabIndex = 17;
@@ -155,7 +135,7 @@
             this.registroEntSalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registroEntSalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registroEntSalButton.Image = ((System.Drawing.Image)(resources.GetObject("registroEntSalButton.Image")));
-            this.registroEntSalButton.Location = new System.Drawing.Point(313, 70);
+            this.registroEntSalButton.Location = new System.Drawing.Point(389, 74);
             this.registroEntSalButton.Name = "registroEntSalButton";
             this.registroEntSalButton.Size = new System.Drawing.Size(152, 199);
             this.registroEntSalButton.TabIndex = 16;
@@ -175,7 +155,7 @@
             this.registroButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registroButton.Image = ((System.Drawing.Image)(resources.GetObject("registroButton.Image")));
-            this.registroButton.Location = new System.Drawing.Point(159, 75);
+            this.registroButton.Location = new System.Drawing.Point(235, 79);
             this.registroButton.Name = "registroButton";
             this.registroButton.Size = new System.Drawing.Size(154, 188);
             this.registroButton.TabIndex = 15;
@@ -195,7 +175,7 @@
             this.usuariosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usuariosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariosButton.Image = ((System.Drawing.Image)(resources.GetObject("usuariosButton.Image")));
-            this.usuariosButton.Location = new System.Drawing.Point(17, 75);
+            this.usuariosButton.Location = new System.Drawing.Point(93, 79);
             this.usuariosButton.Name = "usuariosButton";
             this.usuariosButton.Size = new System.Drawing.Size(142, 188);
             this.usuariosButton.TabIndex = 14;
@@ -212,7 +192,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.usuariosButton);
-            this.groupBox1.Controls.Add(this.acercaDeButton);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.registroButton);
             this.groupBox1.Controls.Add(this.registroEntSalButton);
@@ -254,7 +233,6 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button acercaDeButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button registroEntSalButton;
         private System.Windows.Forms.Button registroButton;

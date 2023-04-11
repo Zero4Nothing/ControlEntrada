@@ -9,8 +9,7 @@ namespace Datos
 {
     public static class ConexionBD
     {
-        // public static string cadenaconexion = "Data Source= (Local)\\SQLEXPRESS;" + "Initial Catalog=EntradaSalida;" + "Persist Security Info=True;" + "User ID=EntradaSalida;" + "Password=1234";
-        public static string cadenaconexion = "Data Source=(Local)\\SQLEXPRESS;Initial Catalog=EntradaSalida;User ID=user1;Password=1234;";
+         public static string cadenaconexion = "Data Source=(Local)\\SQLEXPRESS;Initial Catalog=EntradaSalida;TrustServerCertificate=true;Persist Security Info=True;User ID=EntradaSalida;Password=1234";
 
         public static SqlConnection conectar()
         {

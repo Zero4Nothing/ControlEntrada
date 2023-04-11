@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Logica
 {
-    internal class Encriptar
+    public static class Encriptar
     {
         public static string ficPruebas = Path.Combine(Application.StartupPath, "Clave.xml");
         public static UTF8Encoding UTFEnc = new UTF8Encoding();
