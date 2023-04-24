@@ -64,7 +64,7 @@ namespace Logica
 
         }
 
-        public static void InsertarActualizarUsuarios(string texto, byte Foto, string Cedula, string Nombre, string Usuario, string Correo, string Contrasena, string Rol, int TipoCrud)
+        public static void InsertarActualizarUsuarios(string texto, byte[] Foto, string Cedula, string Nombre, string Usuario, string Correo, string Contrasena, string Rol, int TipoCrud)
         {
             try
             {
@@ -81,24 +81,18 @@ namespace Logica
                 //3 = eliminar
                 if (TipoCrud == 1 || TipoCrud == 2)
                 {
-                    byte[] fotoBytes;
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        Foto.Save(ms, ImageFormat.Jpeg);
-                        fotoBytes = ms.ToArray();
-                    }
-                    SqlParameter paramFoto = new SqlParameter("@Foto", SqlDbType.VarBinary, fotoBytes.Length);
-                    paramFoto.Value = fotoBytes;
-                    consulta.Parameters.Add(paramFoto);
+                    consulta.Parameters.AddWithValue("Foto", Foto);
                     consulta.Parameters.AddWithValue("@Cedula", Cedula);
                     consulta.Parameters.AddWithValue("@Nombre", Nombre);
                     consulta.Parameters.AddWithValue("@Correo", Correo);
                     consulta.Parameters.AddWithValue("@Usuario", Usuario);
                     consulta.Parameters.AddWithValue("@Contrasena", Contrasena);
                     consulta.Parameters.AddWithValue("@Rol", Rol);
+                    consulta.ExecuteNonQuery();
+                    Mytransaction.Commit();
                 }
-                consulta.ExecuteNonQuery();
-                Mytransaction.Commit();
+
+              
             }
             catch (Exception e)
             {
@@ -111,7 +105,6 @@ namespace Logica
                 conexion.Close();
             }
         }
-
 
 
 

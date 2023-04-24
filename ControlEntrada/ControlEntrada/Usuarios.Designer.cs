@@ -35,7 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminarFoto = new System.Windows.Forms.Button();
             this.btnPhoto = new System.Windows.Forms.Button();
             this.pctbFoto = new System.Windows.Forms.PictureBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
@@ -75,6 +75,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbFoto)).BeginInit();
@@ -83,6 +84,7 @@
             this.bindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosbindingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -95,7 +97,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(866, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(684, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(52, 53);
             this.btnCerrar.TabIndex = 6;
@@ -122,7 +124,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 53);
+            this.panel1.Size = new System.Drawing.Size(736, 53);
             this.panel1.TabIndex = 1;
             // 
             // toolTip1
@@ -131,36 +133,36 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnEliminarFoto);
             this.groupBox1.Controls.Add(this.btnPhoto);
             this.groupBox1.Controls.Add(this.pctbFoto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(406, 56);
+            this.groupBox1.Location = new System.Drawing.Point(368, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(291, 268);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Foto";
             // 
-            // button1
+            // btnEliminarFoto
             // 
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(211, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 50);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Eliminar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEliminarFoto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEliminarFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnEliminarFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarFoto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarFoto.Image")));
+            this.btnEliminarFoto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEliminarFoto.Location = new System.Drawing.Point(211, 158);
+            this.btnEliminarFoto.Name = "btnEliminarFoto";
+            this.btnEliminarFoto.Size = new System.Drawing.Size(62, 50);
+            this.btnEliminarFoto.TabIndex = 6;
+            this.btnEliminarFoto.Text = "Eliminar";
+            this.btnEliminarFoto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEliminarFoto.UseVisualStyleBackColor = true;
+            this.btnEliminarFoto.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnPhoto
             // 
@@ -198,15 +200,14 @@
             this.cmbRol.Items.AddRange(new object[] {
             "Admin",
             "Invitado"});
-            this.cmbRol.Location = new System.Drawing.Point(170, 296);
+            this.cmbRol.Location = new System.Drawing.Point(150, 238);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(191, 28);
             this.cmbRol.TabIndex = 42;
-            this.cmbRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbRol_KeyPress);
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(170, 254);
+            this.txtContrasena.Location = new System.Drawing.Point(150, 196);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(191, 26);
@@ -214,14 +215,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(170, 214);
+            this.txtUsuario.Location = new System.Drawing.Point(150, 156);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(191, 26);
             this.txtUsuario.TabIndex = 40;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(170, 174);
+            this.txtCorreo.Location = new System.Drawing.Point(150, 116);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(191, 26);
             this.txtCorreo.TabIndex = 39;
@@ -229,14 +230,14 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(170, 134);
+            this.txtNombre.Location = new System.Drawing.Point(150, 76);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(191, 26);
             this.txtNombre.TabIndex = 38;
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(170, 94);
+            this.txtCedula.Location = new System.Drawing.Point(150, 36);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(191, 26);
@@ -246,7 +247,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(46, 304);
+            this.label7.Location = new System.Drawing.Point(26, 246);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 20);
             this.label7.TabIndex = 36;
@@ -256,7 +257,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 100);
+            this.label2.Location = new System.Drawing.Point(25, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 31;
@@ -266,7 +267,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 260);
+            this.label6.Location = new System.Drawing.Point(26, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 20);
             this.label6.TabIndex = 35;
@@ -276,7 +277,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 140);
+            this.label3.Location = new System.Drawing.Point(25, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 32;
@@ -286,7 +287,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 220);
+            this.label5.Location = new System.Drawing.Point(25, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 34;
@@ -296,7 +297,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 180);
+            this.label4.Location = new System.Drawing.Point(25, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 20);
             this.label4.TabIndex = 33;
@@ -319,9 +320,9 @@
             this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(88, 115);
+            this.groupBox2.Location = new System.Drawing.Point(34, 105);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(754, 375);
+            this.groupBox2.Size = new System.Drawing.Size(673, 302);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Usuario";
@@ -436,7 +437,6 @@
             this.BEliminar.Name = "BEliminar";
             this.BEliminar.Size = new System.Drawing.Size(23, 22);
             this.BEliminar.Text = "Eliminar";
-            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // BEditar
             // 
@@ -512,7 +512,7 @@
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(918, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(736, 25);
             this.bindingNavigator.TabIndex = 7;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
@@ -520,9 +520,9 @@
             // 
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtIdUsuario);
-            this.panel2.Location = new System.Drawing.Point(599, 81);
+            this.panel2.Location = new System.Drawing.Point(598, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(16, 15);
+            this.panel2.Size = new System.Drawing.Size(17, 18);
             this.panel2.TabIndex = 46;
             // 
             // label8
@@ -547,11 +547,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvUsuarios.Location = new System.Drawing.Point(0, 420);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(736, 150);
+            this.dgvUsuarios.TabIndex = 47;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick_1);
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 535);
+            this.ClientSize = new System.Drawing.Size(736, 570);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bindingNavigator);
@@ -576,6 +587,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosbindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,7 +600,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminarFoto;
         private System.Windows.Forms.Button btnPhoto;
         public System.Windows.Forms.TextBox txtContrasena;
         public System.Windows.Forms.TextBox txtUsuario;
@@ -628,5 +640,6 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }

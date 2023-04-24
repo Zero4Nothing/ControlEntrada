@@ -81,11 +81,10 @@ namespace ControlEntrada
 
         public static void GuardarUsuario(Usuarios u)
         {
-          //  byte[] image = ImageToByteArray(u.pctbFoto.Image);
             if (TipoCrud == 1) // Insertar
             {
-                General.InsertarActualizarUsuarios("INSERT INTO Usuarios VALUES ( @Foto, @Cedula,@Nombre,@Correo,@Usuario, @Contrasena,@Rol)",
-                    u.pctbFoto.Image,
+                General.InsertarActualizarUsuarios("INSERT INTO Usuarios VALUES (@Cedula,@Contrasena,@Foto,@Nombre,@Correo,@Usuario,@Rol)",
+                    ImageToByteArray(u.pctbFoto.Image),
                     u.txtCedula.Text,
                     u.txtNombre.Text,
                     u.txtCorreo.Text,
@@ -97,15 +96,15 @@ namespace ControlEntrada
 
             if (TipoCrud == 2) // Actualizar
             {
-                General.InsertarActualizarUsuarios("UPDATE Usuarios Set Foto = @Foto, " + 
-                    "Cedula = @Cedula, " + 
-                    "Nombre = @Nombre," + 
-                    "Correo = @Correo," + 
-                    "Usuario = @Usuario," + 
-                    "Contrasena = @Contrasena" + 
+                General.InsertarActualizarUsuarios("UPDATE Usuarios Set Foto = @Foto, " +
+                    "Cedula = @Cedula, " +
+                    "Nombre = @Nombre," +
+                    "Correo = @Correo," +
+                    "Usuario = @Usuario," +
+                    "Contrasena = @Contrasena" +
                     "Rol = @Rol " +
                     "Where IdUsuario = " + "'" + Convert.ToInt32(u.txtIdUsuario.Text) + "'",
-                    u.pctbFoto.Image,
+                     ImageToByteArray(u.pctbFoto.Image),
                     u.txtCedula.Text,
                     u.txtNombre.Text,
                     u.txtCorreo.Text,

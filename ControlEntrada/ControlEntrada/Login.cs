@@ -30,14 +30,34 @@ namespace ControlEntrada
         {
             string usuario = txtUsuario.Text;
             string contrasena = txtContrasena.Text;
+            string encript = Encriptar.GetSHA256(contrasena);
 
-            try {
-                SqlCommand command = new SqlCommand("SELECT * FROM Usuarios WHERE Usuario=@Usuario AND Contrasena = @Contrasena", ConexionBD.conectar());
+
+            try
+            {
+               
+                //Traer contraseña
+
+
+
+                //Desencriptar password
+
+
+
+
+                SqlCommand command = new SqlCommand("SELECT Usuario FROM Usuarios WHERE Usuario=@Usuario AND Contrasena = @Contrasena", ConexionBD.conectar());
+
                 command.Parameters.AddWithValue("@Usuario", usuario);
-                command.Parameters.AddWithValue("@Contrasena", contrasena);
-                SqlDataReader reader = command.ExecuteReader();
+                command.Parameters.AddWithValue("@Contrasena", encript);
 
-                if (reader.HasRows)
+
+                SqlDataAdapter sda = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+
+
+                if (dt.Rows.Count != 0)
                 {
 
                     this.Hide();
@@ -59,8 +79,9 @@ namespace ControlEntrada
                 MessageBox.Show("Ocurrio un error al intentar ingresar " + ex.ToString());
             }
 
-            
+
         }
-        
+
+
     }
 }
